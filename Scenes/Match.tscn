@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4geeeurxb86p"]
+
+[ext_resource type="Script" uid="uid://dvwa48yvwb4a3" path="res://Scripts/Match.gd" id="1_cctbq"]
+
+[node name="Match" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 92.0
+offset_right = 92.0
+script = ExtResource("1_cctbq")
+
+[node name="UIContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="UIContainer"]
+custom_minimum_size = Vector2(600, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Marcador: Nosotros 0 - 0 Rival"
+horizontal_alignment = 1
+
+[node name="InjuryLabel" type="Label" parent="UIContainer"]
+custom_minimum_size = Vector2(600, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Marcador: Nosotros 0 - 0 Rival
+"
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="UIContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Directo" type="RichTextLabel" parent="UIContainer"]
+custom_minimum_size = Vector2(600, 200)
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+bbcode_enabled = true
+scroll_following = true
+horizontal_alignment = 1
+
+[node name="HomeTeamList" type="ItemList" parent="UIContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="AwayTeamList" type="ItemList" parent="UIContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="ExitMatchButton" type="Button" parent="UIContainer"]
+layout_mode = 2
+disabled = true
+text = "Salir del Partido"
+
+[connection signal="pressed" from="UIContainer/ExitMatchButton" to="." method="_on_exit_match_button_pressed"]

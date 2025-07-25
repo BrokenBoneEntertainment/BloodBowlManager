@@ -1,0 +1,50 @@
+{
+	"plays": {
+		"pass_success": [
+			"{player} lanza un pase perfecto que conecta con su compañero.",
+			"{player} ejecuta un pase preciso que avanza el balón."
+		],
+		"pass_failure": [
+			"{player} lanza un pase errático que cae al césped.",
+			"{player} intenta un pase, pero el balón es interceptado."
+		],
+		"touchdown_success": [
+			"{player} cruza la línea y anota un touchdown espectacular.",
+			"{player} rompe la defensa y marca un touchdown."
+		],
+		"touchdown_failure": [
+			"{player} es placado justo antes de la línea de touchdown.",
+			"{player} pierde el balón a centímetros de anotar."
+		],
+		"injury_success": [
+			"{player} realiza un placaje brutal, dejando al rival fuera de juego.",
+			"{player} golpea fuerte, causando una lesión al oponente."
+		],
+		"injury_failure": [
+			"{player} recibe un golpe duro y queda lesionado.",
+			"{player} es placado y sale del campo con una lesión."
+		],
+		"dodge_success": [
+			"{player} esquiva con agilidad a un defensor y avanza.",
+			"{player} se zafa de un placaje con un movimiento rápido."
+		],
+		"dodge_failure": [
+			"{player} intenta esquivar, pero es derribado por el defensor.",
+			"{player} tropieza al intentar un regate y pierde el balón."
+		],
+		"filler": [
+			"{player} corre por el campo, buscando una oportunidad.",
+			"{player} se posiciona estratégicamente en el terreno.",
+			"El balón pasa de mano en mano mientras el equipo avanza.",
+			"{player} mantiene la posesión bajo presión.",
+			"El equipo se reorganiza para la siguiente jugada."
+		]
+	},
+	"halftime_plays": [
+		"¡Los jugadores se retiran al vestuario mientras un fan lanza un hot dog al campo!",
+		"¡Entretempo! El entrenador motiva al equipo con un discurso épico... o un chiste malo.",
+		"¡Pausa! Los aficionados cantan y alguien confunde el balón con una piñata.",
+		"¡Descanso! El equipo se hidrata mientras un espectador intenta un baile viral.",
+		"¡Medio tiempo! Un pájaro invade el campo y se proclama MVP del entretiempo."
+	]
+}

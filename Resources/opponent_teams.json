@@ -1,0 +1,20 @@
+{
+	"opponents": [
+		{"name": "Zarg el Fuerte", "position": "Fighter", "race": "Human", "stats": {"strength": 4, "agility": 3, "armor": 8, "movement": 6}, "number": 1},
+		{"name": "Korg el Rápido", "position": "Runner", "race": "Human", "stats": {"strength": 2, "agility": 3, "armor": 7, "movement": 7}, "number": 2},
+		{"name": "Thar el Defensor", "position": "Defender", "race": "Human", "stats": {"strength": 3, "agility": 2, "armor": 9, "movement": 5}, "number": 3},
+		{"name": "Vrok el Lanzador", "position": "Thrower", "race": "Human", "stats": {"strength": 2, "agility": 4, "armor": 7, "movement": 6}, "number": 4},
+		{"name": "Sarg el Valiente", "position": "Fighter", "race": "Human", "stats": {"strength": 4, "agility": 3, "armor": 8, "movement": 6}, "number": 5},
+		{"name": "Lorz el Ágil", "position": "Runner", "race": "Human", "stats": {"strength": 2, "agility": 3, "armor": 7, "movement": 7}, "number": 6},
+		{"name": "Gorz el Protector", "position": "Defender", "race": "Human", "stats": {"strength": 3, "agility": 2, "armor": 9, "movement": 5}, "number": 7},
+		{"name": "Rok el Preciso", "position": "Thrower", "race": "Human", "stats": {"strength": 2, "agility": 4, "armor": 7, "movement": 6}, "number": 8},
+		{"name": "Darg el Guerrero", "position": "Fighter", "race": "Human", "stats": {"strength": 4, "agility": 3, "armor": 8, "movement": 6}, "number": 9},
+		{"name": "Torg el Veloz", "position": "Runner", "race": "Human", "stats": {"strength": 2, "agility": 3, "armor": 7, "movement": 7}, "number": 10},
+		{"name": "Morz el Guardián", "position": "Defender", "race": "Human", "stats": {"strength": 3, "agility": 2, "armor": 9, "movement": 5}, "number": 11},
+		{"name": "Norz el Tirador", "position": "Thrower", "race": "Human", "stats": {"strength": 2, "agility": 4, "armor": 7, "movement": 6}, "number": 12},
+		{"name": "Parg el Bravo", "position": "Fighter", "race": "Human", "stats": {"strength": 4, "agility": 3, "armor": 8, "movement": 6}, "number": 13},
+		{"name": "Qorz el Corredor", "position": "Runner", "race": "Human", "stats": {"strength": 2, "agility": 3, "armor": 7, "movement": 7}, "number": 14},
+		{"name": "Rarg el Escudo", "position": "Defender", "race": "Human", "stats": {"strength": 3, "agility": 2, "armor": 9, "movement": 5}, "number": 15},
+		{"name": "Sorz el Apuntador", "position": "Defender", "race": "Human", "stats": {"strength": 3, "agility": 2, "armor": 9, "movement": 5}, "number": 16}
+	]
+}

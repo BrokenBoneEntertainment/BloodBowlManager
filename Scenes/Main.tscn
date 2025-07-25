@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwcnr14ml82v7"]
+
+[ext_resource type="Script" uid="uid://di3b4h0djomgb" path="res://Scripts/Main.gd" id="1_r150o"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_r150o")
+
+[node name="UIContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 88.0
+offset_right = 688.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Label" parent="UIContainer"]
+custom_minimum_size = Vector2(600, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Blood Bowl Manager (Alpha)"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="UIContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Crea un Equipo y Juega"
+
+[connection signal="pressed" from="UIContainer/PlayButton" to="." method="_on_play_button_pressed"]
