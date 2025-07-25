@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Blood Bowl Manager"
-run/main_scene="uid://cwcnr14ml82v7"
+run/main_scene="uid://oogbvrmyfohe"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://Scripts/Global.gd"
 
 [display]
 

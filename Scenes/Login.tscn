@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://oogbvrmyfohe"]
+
+[ext_resource type="Script" uid="uid://ob2fno18awo7" path="res://Scenes/Login.gd" id="1_leum0"]
+
+[node name="Login" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_leum0")
+
+[node name="UIContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 177.0
+offset_right = 545.0
+offset_bottom = 367.0
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="UIContainer"]
+layout_mode = 2
+text = "Blood Bowl Manager (Pre-Alpha)"
+
+[node name="UsernameInput" type="LineEdit" parent="UIContainer"]
+layout_mode = 2
+placeholder_text = "User"
+
+[node name="PasswordInput" type="LineEdit" parent="UIContainer"]
+layout_mode = 2
+placeholder_text = "Password"
+secret = true
+
+[node name="LoginButton" type="Button" parent="UIContainer"]
+layout_mode = 2
+text = "Login"
+
+[node name="CreateUserButton" type="Button" parent="UIContainer"]
+layout_mode = 2
+text = "Crear Cuenta"
+
+[node name="MessageLabel" type="Label" parent="UIContainer"]
+layout_mode = 2
+
+[node name="CreateUserPopup" type="PopupPanel" parent="UIContainer"]
+
+[node name="PopupContent" type="VBoxContainer" parent="UIContainer/CreateUserPopup"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PopupUsernameInput" type="LineEdit" parent="UIContainer/CreateUserPopup/PopupContent"]
+layout_mode = 2
+placeholder_text = "Usuario"
+
+[node name="PopupPasswordInput" type="LineEdit" parent="UIContainer/CreateUserPopup/PopupContent"]
+layout_mode = 2
+placeholder_text = "Contraseña"
+
+[node name="PopupVerifyPasswordInput" type="LineEdit" parent="UIContainer/CreateUserPopup/PopupContent"]
+layout_mode = 2
+placeholder_text = "Verificar Contraseña"
+
+[node name="ConfirmCreateButton" type="Button" parent="UIContainer/CreateUserPopup/PopupContent"]
+layout_mode = 2
+text = "Confirmar"
+
+[node name="CancelCreateButton" type="Button" parent="UIContainer/CreateUserPopup/PopupContent"]
+layout_mode = 2
+text = "Cancelar"
+
+[node name="PopupMessageLabel" type="Label" parent="UIContainer/CreateUserPopup/PopupContent"]
+layout_mode = 2
+
+[connection signal="pressed" from="UIContainer/LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="UIContainer/CreateUserButton" to="." method="_on_create_user_button_pressed"]
+[connection signal="pressed" from="UIContainer/CreateUserPopup/PopupContent/ConfirmCreateButton" to="." method="_on_confirm_create_button_pressed"]
+[connection signal="pressed" from="UIContainer/CreateUserPopup/PopupContent/CancelCreateButton" to="." method="_on_cancel_create_button_pressed"]

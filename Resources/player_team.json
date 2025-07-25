@@ -2,7 +2,7 @@
 	"players": [
 		{
 			"name": "Sigtrygg el Ágil",
-			"number": 1.0,
+			"number": 1,
 			"position": "Fighter",
 			"race": "Human",
 			"state": "jugando",
@@ -15,7 +15,7 @@
 		},
 		{
 			"name": "Erik el Campeón",
-			"number": 2.0,
+			"number": 2,
 			"position": "Fighter",
 			"race": "Human",
 			"state": "jugando",
@@ -28,7 +28,7 @@
 		},
 		{
 			"name": "Einar el Destructor",
-			"number": 3.0,
+			"number": 3,
 			"position": "Fighter",
 			"race": "Human",
 			"state": "jugando",
@@ -41,7 +41,7 @@
 		},
 		{
 			"name": "Morten el Atronador",
-			"number": 4.0,
+			"number": 4,
 			"position": "Fighter",
 			"race": "Human",
 			"state": "herido",
@@ -54,7 +54,7 @@
 		},
 		{
 			"name": "Rorik el Arrasador",
-			"number": 5.0,
+			"number": 5,
 			"position": "Fighter",
 			"race": "Human",
 			"state": "herido",
@@ -67,7 +67,7 @@
 		},
 		{
 			"name": "Leiv el Vigía",
-			"number": 6.0,
+			"number": 6,
 			"position": "Fighter",
 			"race": "Human",
 			"state": "herido",
@@ -80,10 +80,10 @@
 		},
 		{
 			"name": "Jens el Rudo",
-			"number": 7.0,
+			"number": 7,
 			"position": "Fighter",
 			"race": "Human",
-			"state": "jugando",
+			"state": "herido",
 			"stats": {
 				"agility": 3.0,
 				"armor": 8.0,
@@ -93,7 +93,7 @@
 		},
 		{
 			"name": "Rurik el Inamovible",
-			"number": 8.0,
+			"number": 8,
 			"position": "Fighter",
 			"race": "Human",
 			"state": "herido",
@@ -106,7 +106,7 @@
 		},
 		{
 			"name": "Dagfinn el Inclemente",
-			"number": 9.0,
+			"number": 9,
 			"position": "Defender",
 			"race": "Human",
 			"state": "jugando",
@@ -119,7 +119,7 @@
 		},
 		{
 			"name": "Leiv el Invencible",
-			"number": 10.0,
+			"number": 10,
 			"position": "Defender",
 			"race": "Human",
 			"state": "jugando",
@@ -132,7 +132,7 @@
 		},
 		{
 			"name": "Dagur el Imparable",
-			"number": 11.0,
+			"number": 11,
 			"position": "Defender",
 			"race": "Human",
 			"state": "jugando",
@@ -145,7 +145,7 @@
 		},
 		{
 			"name": "Bjorn el Despiadado",
-			"number": 12.0,
+			"number": 12,
 			"position": "Defender",
 			"race": "Human",
 			"state": "jugando",
@@ -158,7 +158,7 @@
 		},
 		{
 			"name": "Vidar el Furioso",
-			"number": 13.0,
+			"number": 13,
 			"position": "Defender",
 			"race": "Human",
 			"state": "herido",
@@ -171,7 +171,7 @@
 		},
 		{
 			"name": "Torsten el Inamovible",
-			"number": 14.0,
+			"number": 14,
 			"position": "Defender",
 			"race": "Human",
 			"state": "herido",
@@ -184,10 +184,10 @@
 		},
 		{
 			"name": "Tormod el Desafiante",
-			"number": 15.0,
+			"number": 15,
 			"position": "Defender",
 			"race": "Human",
-			"state": "jugando",
+			"state": "herido",
 			"stats": {
 				"agility": 2.0,
 				"armor": 9.0,
@@ -197,7 +197,7 @@
 		},
 		{
 			"name": "Vidar el Atronador",
-			"number": 16.0,
+			"number": 16,
 			"position": "Defender",
 			"race": "Human",
 			"state": "jugando",
@@ -210,10 +210,10 @@
 		},
 		{
 			"name": "Thorin el Devastador",
-			"number": 17.0,
+			"number": 17,
 			"position": "Defender",
 			"race": "Human",
-			"state": "jugando",
+			"state": "herido",
 			"stats": {
 				"agility": 2.0,
 				"armor": 9.0,
