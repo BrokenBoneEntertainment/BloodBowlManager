@@ -1,0 +1,220 @@
+{
+	"players": [
+		{
+			"name": "Mikkel el Indestructible",
+			"number": 1.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "playing",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Asger el Indestructible",
+			"number": 2.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "playing",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Thorin el Forjador",
+			"number": 3.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "herido",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Fridtjof Corredor",
+			"number": 4.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "playing",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Leiv el Rápido",
+			"number": 5.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "playing",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Yngvar el Martillo",
+			"number": 6.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "playing",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Knud el Inexorable",
+			"number": 7.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "playing",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Ragnar el Indomable",
+			"number": 8.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "herido",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Rorik el Dominante",
+			"number": 9.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "playing",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Dag el Campeón",
+			"number": 10.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "herido",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Freyr el Forjador",
+			"number": 11.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "playing",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Torvald el Destructor",
+			"number": 12.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "playing",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Egil el Campeón",
+			"number": 13.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "playing",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Torvald el Imponente",
+			"number": 14.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "playing",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Jorunn el Acorazado",
+			"number": 15.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "herido",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Jarl el Devastador",
+			"number": 16.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "healthy",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null
+	]
+}

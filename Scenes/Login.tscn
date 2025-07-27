@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://oogbvrmyfohe"]
 
-[ext_resource type="Script" uid="uid://ob2fno18awo7" path="res://Scenes/Login.gd" id="1_leum0"]
+[ext_resource type="Script" uid="uid://ob2fno18awo7" path="res://Scripts/Login.gd" id="1_leum0"]
 
 [node name="Login" type="Control"]
 layout_mode = 3
@@ -44,8 +44,10 @@ layout_mode = 2
 [node name="CreateUserPopup" type="PopupPanel" parent="UIContainer"]
 
 [node name="PopupContent" type="VBoxContainer" parent="UIContainer/CreateUserPopup"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 202.0
 
 [node name="PopupUsernameInput" type="LineEdit" parent="UIContainer/CreateUserPopup/PopupContent"]
 layout_mode = 2

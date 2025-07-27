@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=3 uid="uid://kkosyepjlyrr"]
+
+[ext_resource type="Script" uid="uid://cetsbgtr3q088" path="res://Scripts/Teams.gd" id="1_nfyii"]
+
+[node name="Teams" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nfyii")
+
+[node name="UIContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Label" parent="UIContainer"]
+layout_mode = 2
+text = "Tus Equipos"
+
+[node name="TeamList" type="VBoxContainer" parent="UIContainer"]
+layout_mode = 2
+
+[node name="CreateTeamButton" type="Button" parent="UIContainer"]
+layout_mode = 2
+text = "Crear  Equipo"
+
+[node name="MessageLabel" type="Label" parent="UIContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="UIContainer"]
+layout_mode = 2
+text = "Volver"
+
+[node name="CreateTeamPopup" type="Popup" parent="UIContainer"]
+
+[node name="PopupContent" type="VBoxContainer" parent="UIContainer/CreateTeamPopup"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 132.0
+
+[node name="TeamNameInput" type="LineEdit" parent="UIContainer/CreateTeamPopup/PopupContent"]
+layout_mode = 2
+placeholder_text = "Nombre del equipo"
+
+[node name="ConfirmCreateButton" type="Button" parent="UIContainer/CreateTeamPopup/PopupContent"]
+layout_mode = 2
+text = "Confirmar"
+
+[node name="CancelCreateButton" type="Button" parent="UIContainer/CreateTeamPopup/PopupContent"]
+layout_mode = 2
+text = "Cancelar"
+
+[node name="PopupMessageLabel" type="Label" parent="UIContainer/CreateTeamPopup/PopupContent"]
+layout_mode = 2
+
+[node name="ConfirmDeleteTeamPopup" type="Popup" parent="UIContainer"]
+
+[node name="PopupContainer" type="VBoxContainer" parent="UIContainer/ConfirmDeleteTeamPopup"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 96.0
+
+[node name="DeleteTeamPopupLabel" type="Label" parent="UIContainer/ConfirmDeleteTeamPopup/PopupContainer"]
+layout_mode = 2
+
+[node name="ButtonContainer" type="HBoxContainer" parent="UIContainer/ConfirmDeleteTeamPopup/PopupContainer"]
+layout_mode = 2
+
+[node name="ConfirmDeleteTeamButton" type="Button" parent="UIContainer/ConfirmDeleteTeamPopup/PopupContainer/ButtonContainer"]
+layout_mode = 2
+
+[node name="CancelDeleteTeamButton" type="Button" parent="UIContainer/ConfirmDeleteTeamPopup/PopupContainer/ButtonContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="UIContainer/CreateTeamButton" to="." method="_on_create_team_button_pressed"]
+[connection signal="pressed" from="UIContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="UIContainer/CreateTeamPopup/PopupContent/ConfirmCreateButton" to="." method="_on_confirm_create_button_pressed"]
+[connection signal="pressed" from="UIContainer/CreateTeamPopup/PopupContent/CancelCreateButton" to="." method="_on_cancel_create_button_pressed"]
+[connection signal="pressed" from="UIContainer/ConfirmDeleteTeamPopup/PopupContainer/ButtonContainer/ConfirmDeleteTeamButton" to="." method="_on_confirm_delete_team_button_pressed"]
+[connection signal="pressed" from="UIContainer/ConfirmDeleteTeamPopup/PopupContainer/ButtonContainer/CancelDeleteTeamButton" to="." method="_on_cancel_delete_team_button_pressed"]

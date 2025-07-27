@@ -28,4 +28,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Crea un Equipo y Juega"
 
+[node name="BackToLogin" type="Button" parent="UIContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Salir"
+
 [connection signal="pressed" from="UIContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="UIContainer/BackToLogin" to="." method="_on_back_to_login_button_pressed"]

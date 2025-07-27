@@ -1,11 +1,11 @@
 {
 	"players": [
 		{
-			"name": "Sigtrygg el Ágil",
-			"number": 1,
+			"name": "Nils el Forjador",
+			"number": 1.0,
 			"position": "Fighter",
 			"race": "Human",
-			"state": "jugando",
+			"state": "playing",
 			"stats": {
 				"agility": 3.0,
 				"armor": 8.0,
@@ -14,11 +14,11 @@
 			}
 		},
 		{
-			"name": "Erik el Campeón",
-			"number": 2,
+			"name": "Njal el Inamovible",
+			"number": 2.0,
 			"position": "Fighter",
 			"race": "Human",
-			"state": "jugando",
+			"state": "playing",
 			"stats": {
 				"agility": 3.0,
 				"armor": 8.0,
@@ -27,89 +27,11 @@
 			}
 		},
 		{
-			"name": "Einar el Destructor",
-			"number": 3,
-			"position": "Fighter",
-			"race": "Human",
-			"state": "jugando",
-			"stats": {
-				"agility": 3.0,
-				"armor": 8.0,
-				"movement": 6.0,
-				"strength": 4.0
-			}
-		},
-		{
-			"name": "Morten el Atronador",
-			"number": 4,
-			"position": "Fighter",
-			"race": "Human",
-			"state": "herido",
-			"stats": {
-				"agility": 3.0,
-				"armor": 8.0,
-				"movement": 6.0,
-				"strength": 4.0
-			}
-		},
-		{
-			"name": "Rorik el Arrasador",
-			"number": 5,
-			"position": "Fighter",
-			"race": "Human",
-			"state": "herido",
-			"stats": {
-				"agility": 3.0,
-				"armor": 8.0,
-				"movement": 6.0,
-				"strength": 4.0
-			}
-		},
-		{
-			"name": "Leiv el Vigía",
-			"number": 6,
-			"position": "Fighter",
-			"race": "Human",
-			"state": "herido",
-			"stats": {
-				"agility": 3.0,
-				"armor": 8.0,
-				"movement": 6.0,
-				"strength": 4.0
-			}
-		},
-		{
-			"name": "Jens el Rudo",
-			"number": 7,
-			"position": "Fighter",
-			"race": "Human",
-			"state": "herido",
-			"stats": {
-				"agility": 3.0,
-				"armor": 8.0,
-				"movement": 6.0,
-				"strength": 4.0
-			}
-		},
-		{
-			"name": "Rurik el Inamovible",
-			"number": 8,
-			"position": "Fighter",
-			"race": "Human",
-			"state": "herido",
-			"stats": {
-				"agility": 3.0,
-				"armor": 8.0,
-				"movement": 6.0,
-				"strength": 4.0
-			}
-		},
-		{
-			"name": "Dagfinn el Inclemente",
-			"number": 9,
+			"name": "Egil el Conquistador",
+			"number": 3.0,
 			"position": "Defender",
 			"race": "Human",
-			"state": "jugando",
+			"state": "playing",
 			"stats": {
 				"agility": 2.0,
 				"armor": 9.0,
@@ -118,11 +40,11 @@
 			}
 		},
 		{
-			"name": "Leiv el Invencible",
-			"number": 10,
+			"name": "Eirik el Rápido",
+			"number": 4.0,
 			"position": "Defender",
 			"race": "Human",
-			"state": "jugando",
+			"state": "playing",
 			"stats": {
 				"agility": 2.0,
 				"armor": 9.0,
@@ -131,11 +53,11 @@
 			}
 		},
 		{
-			"name": "Dagur el Imparable",
-			"number": 11,
+			"name": "Gorm el Voraz",
+			"number": 5.0,
 			"position": "Defender",
 			"race": "Human",
-			"state": "jugando",
+			"state": "playing",
 			"stats": {
 				"agility": 2.0,
 				"armor": 9.0,
@@ -144,11 +66,11 @@
 			}
 		},
 		{
-			"name": "Bjorn el Despiadado",
-			"number": 12,
+			"name": "Sigurd el Poderoso",
+			"number": 6.0,
 			"position": "Defender",
 			"race": "Human",
-			"state": "jugando",
+			"state": "playing",
 			"stats": {
 				"agility": 2.0,
 				"armor": 9.0,
@@ -157,11 +79,11 @@
 			}
 		},
 		{
-			"name": "Vidar el Furioso",
-			"number": 13,
+			"name": "Stig el Dominante",
+			"number": 7.0,
 			"position": "Defender",
 			"race": "Human",
-			"state": "herido",
+			"state": "playing",
 			"stats": {
 				"agility": 2.0,
 				"armor": 9.0,
@@ -170,11 +92,11 @@
 			}
 		},
 		{
-			"name": "Torsten el Inamovible",
-			"number": 14,
+			"name": "Trygve el Inexorable",
+			"number": 8.0,
 			"position": "Defender",
 			"race": "Human",
-			"state": "herido",
+			"state": "playing",
 			"stats": {
 				"agility": 2.0,
 				"armor": 9.0,
@@ -183,11 +105,11 @@
 			}
 		},
 		{
-			"name": "Tormod el Desafiante",
-			"number": 15,
+			"name": "Nils el Rápido",
+			"number": 9.0,
 			"position": "Defender",
 			"race": "Human",
-			"state": "herido",
+			"state": "playing",
 			"stats": {
 				"agility": 2.0,
 				"armor": 9.0,
@@ -196,11 +118,11 @@
 			}
 		},
 		{
-			"name": "Vidar el Atronador",
-			"number": 16,
+			"name": "Morten el Audaz",
+			"number": 10.0,
 			"position": "Defender",
 			"race": "Human",
-			"state": "jugando",
+			"state": "playing",
 			"stats": {
 				"agility": 2.0,
 				"armor": 9.0,
@@ -209,11 +131,89 @@
 			}
 		},
 		{
-			"name": "Thorin el Devastador",
-			"number": 17,
+			"name": "Skald el Rápido",
+			"number": 11.0,
 			"position": "Defender",
 			"race": "Human",
-			"state": "herido",
+			"state": "playing",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Torgny el Glorioso",
+			"number": 12.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "healthy",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Knut el Valido",
+			"number": 13.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "healthy",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Sigurd el Titán",
+			"number": 14.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "healthy",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Hakon el Imbatible",
+			"number": 15.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "healthy",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Eirik el Inmisericorde",
+			"number": 16.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "healthy",
+			"stats": {
+				"agility": 2.0,
+				"armor": 9.0,
+				"movement": 5.0,
+				"strength": 3.0
+			}
+		},
+		{
+			"name": "Dren Lanzarrayos",
+			"number": 17.0,
+			"position": "Defender",
+			"race": "Human",
+			"state": "healthy",
 			"stats": {
 				"agility": 2.0,
 				"armor": 9.0,

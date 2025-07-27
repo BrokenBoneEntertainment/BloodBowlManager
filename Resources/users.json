@@ -1,16 +1,16 @@
 {
 	"users": [
 		{
-			"password": "pass123",
-			"username": "player1"
+			"password": "1234",
+			"username": "mogolo"
 		},
 		{
-			"password": "pass456",
-			"username": "player2"
+			"password": "caca",
+			"username": "test1"
 		},
 		{
-			"password": "tonto",
-			"username": "prueba"
+			"password": "caca",
+			"username": "test2"
 		}
 	]
 }
