@@ -1,231 +1,228 @@
 {
 	"players": [
 		{
-			"name": "Nils el Forjador",
-			"number": 1.0,
-			"position": "Fighter",
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 7.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Hjalmar el Atroz",
+			"number": 1,
+			"position": "Blitzer",
 			"race": "Human",
-			"state": "playing",
-			"stats": {
-				"agility": 3.0,
-				"armor": 8.0,
-				"movement": 6.0,
-				"strength": 4.0
-			}
+			"skills": [
+				"Block"
+			],
+			"state": "playing"
 		},
 		{
-			"name": "Njal el Inamovible",
-			"number": 2.0,
-			"position": "Fighter",
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 7.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Yngvar el Ágil",
+			"number": 2,
+			"position": "Blitzer",
 			"race": "Human",
-			"state": "playing",
-			"stats": {
-				"agility": 3.0,
-				"armor": 8.0,
-				"movement": 6.0,
-				"strength": 4.0
-			}
+			"skills": [
+				"Block"
+			],
+			"state": "playing"
 		},
 		{
-			"name": "Egil el Conquistador",
-			"number": 3.0,
-			"position": "Defender",
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 7.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Einar el Titánico",
+			"number": 3,
+			"position": "Blitzer",
 			"race": "Human",
-			"state": "playing",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
+			"skills": [
+				"Block"
+			],
+			"state": "playing"
 		},
 		{
-			"name": "Eirik el Rápido",
-			"number": 4.0,
-			"position": "Defender",
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 7.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Gunnar el Sabio",
+			"number": 4,
+			"position": "Blitzer",
 			"race": "Human",
-			"state": "playing",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
+			"skills": [
+				"Block"
+			],
+			"state": "playing"
 		},
 		{
-			"name": "Gorm el Voraz",
-			"number": 5.0,
-			"position": "Defender",
+			"attributes": {
+				"AG": 4.0,
+				"AV": 10.0,
+				"MA": 5.0,
+				"PA": 5.0,
+				"ST": 5.0
+			},
+			"name": "Ulfar el Fuerte",
+			"number": 5,
+			"position": "Ogre",
 			"race": "Human",
-			"state": "playing",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
+			"skills": [
+				"Bone-head",
+				"Mighty Blow",
+				"Thick Skull",
+				"Throw Team-mate"
+			],
+			"state": "playing"
 		},
 		{
-			"name": "Sigurd el Poderoso",
-			"number": 6.0,
-			"position": "Defender",
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Rolf el Resplandeciente",
+			"number": 6,
+			"position": "Lineman",
 			"race": "Human",
-			"state": "playing",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
+			"skills": [],
+			"state": "playing"
 		},
 		{
-			"name": "Stig el Dominante",
-			"number": 7.0,
-			"position": "Defender",
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Ivar el Incansable",
+			"number": 7,
+			"position": "Lineman",
 			"race": "Human",
-			"state": "playing",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
+			"skills": [],
+			"state": "playing"
 		},
 		{
-			"name": "Trygve el Inexorable",
-			"number": 8.0,
-			"position": "Defender",
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Rorik el Fuerte",
+			"number": 8,
+			"position": "Lineman",
 			"race": "Human",
-			"state": "playing",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
+			"skills": [],
+			"state": "playing"
 		},
 		{
-			"name": "Nils el Rápido",
-			"number": 9.0,
-			"position": "Defender",
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Igor el Guardián",
+			"number": 9,
+			"position": "Lineman",
 			"race": "Human",
-			"state": "playing",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
+			"skills": [],
+			"state": "playing"
 		},
 		{
-			"name": "Morten el Audaz",
-			"number": 10.0,
-			"position": "Defender",
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Torsten el Coloso",
+			"number": 10,
+			"position": "Lineman",
 			"race": "Human",
-			"state": "playing",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
+			"skills": [],
+			"state": "playing"
 		},
 		{
-			"name": "Skald el Rápido",
-			"number": 11.0,
-			"position": "Defender",
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Loki el Valeroso",
+			"number": 11,
+			"position": "Lineman",
 			"race": "Human",
-			"state": "playing",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
+			"skills": [],
+			"state": "playing"
 		},
 		{
-			"name": "Torgny el Glorioso",
-			"number": 12.0,
-			"position": "Defender",
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Einar el Inamovible",
+			"number": 12,
+			"position": "Lineman",
 			"race": "Human",
-			"state": "healthy",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
+			"skills": [],
+			"state": "healthy"
 		},
 		{
-			"name": "Knut el Valido",
-			"number": 13.0,
-			"position": "Defender",
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Oskar el Astuto",
+			"number": 13,
+			"position": "Lineman",
 			"race": "Human",
-			"state": "healthy",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
+			"skills": [],
+			"state": "healthy"
 		},
 		{
-			"name": "Sigurd el Titán",
-			"number": 14.0,
-			"position": "Defender",
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Peder el Ligero",
+			"number": 14,
+			"position": "Lineman",
 			"race": "Human",
-			"state": "healthy",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
+			"skills": [],
+			"state": "healthy"
 		},
-		{
-			"name": "Hakon el Imbatible",
-			"number": 15.0,
-			"position": "Defender",
-			"race": "Human",
-			"state": "healthy",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
-		},
-		{
-			"name": "Eirik el Inmisericorde",
-			"number": 16.0,
-			"position": "Defender",
-			"race": "Human",
-			"state": "healthy",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
-		},
-		{
-			"name": "Dren Lanzarrayos",
-			"number": 17.0,
-			"position": "Defender",
-			"race": "Human",
-			"state": "healthy",
-			"stats": {
-				"agility": 2.0,
-				"armor": 9.0,
-				"movement": 5.0,
-				"strength": 3.0
-			}
-		},
-		null,
-		null,
-		null,
-		null,
-		null,
 		null,
 		null
 	]

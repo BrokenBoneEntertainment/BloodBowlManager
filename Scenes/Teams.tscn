@@ -5,8 +5,10 @@
 [node name="Teams" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 419.0
+offset_top = 60.0
+offset_right = 459.0
+offset_bottom = 100.0
 script = ExtResource("1_nfyii")
 
 [node name="UIContainer" type="VBoxContainer" parent="."]

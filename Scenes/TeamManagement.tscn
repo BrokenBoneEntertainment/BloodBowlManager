@@ -5,8 +5,10 @@
 [node name="TeamManagement" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 104.0
-offset_right = 104.0
+offset_left = 125.0
+offset_top = 16.0
+offset_right = 125.0
+offset_bottom = 16.0
 script = ExtResource("1_nwkdv")
 
 [node name="UIContainer" type="VBoxContainer" parent="."]
@@ -101,6 +103,24 @@ text = "Confirmar"
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 text = "Cancelar"
+
+[node name="DetailsPopup" type="PopupPanel" parent="UIContainer"]
+auto_translate_mode = 1
+position = Vector2i(200, 200)
+size = Vector2i(308, 118)
+
+[node name="PopupContainer" type="VBoxContainer" parent="UIContainer/DetailsPopup"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 304.0
+offset_bottom = 114.0
+
+[node name="DetailsLabel" type="Label" parent="UIContainer/DetailsPopup/PopupContainer"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+text = "¿Eliminar a [nombre]?
+
+"
 
 [connection signal="item_clicked" from="UIContainer/ItemList" to="." method="_on_item_list_item_clicked"]
 [connection signal="pressed" from="UIContainer/HirePlayerButton" to="." method="_on_hire_player_button_pressed"]

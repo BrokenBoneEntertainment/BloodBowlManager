@@ -1,19 +1,19 @@
 extends Control
 
-# Team data
-var team = []  # List of players (24 positions, null for empty)
+var team = []  # List of players (16 positions, null for empty)
 var position_limits = {
-	"Fighter": 8,
-	"Defender": 16,
-	"Thrower": 4,
-	"Runner": 4
+	"Lineman": 16,
+	"Thrower": 2,
+	"Catcher": 4,
+	"Blitzer": 4,
+	"Ogre": 1,
+	"Halfling": 3
 }
-var first_names = []  # List of first names
-var titles = []  # List of titles
-var delete_mode = false  # State of delete mode
-var delete_index = -1  # Index of player to delete
+var first_names = []
+var titles = []
+var delete_mode = false
+var delete_index = -1
 
-# UI node references
 @onready var title_label = $UIContainer/TitleLabel
 @onready var item_list = $UIContainer/ItemList
 @onready var warning_label = $UIContainer/WarningLabel
@@ -29,8 +29,9 @@ var delete_index = -1  # Index of player to delete
 @onready var confirm_delete_button = $UIContainer/ConfirmDeletePopup/PopupContainer/ButtonContainer/ConfirmDeleteButton
 @onready var cancel_delete_button = $UIContainer/ConfirmDeletePopup/PopupContainer/ButtonContainer/CancelDeleteButton
 @onready var delete_popup_label = $UIContainer/ConfirmDeletePopup/PopupContainer/Label
+@onready var details_popup = $UIContainer/DetailsPopup
+@onready var details_label = $UIContainer/DetailsPopup/PopupContainer/DetailsLabel
 
-# Called when the node is ready
 func _ready():
 	var file = FileAccess.open("res://Resources/player_names.json", FileAccess.READ)
 	if file:
@@ -41,7 +42,7 @@ func _ready():
 	else:
 		show_message("Error: No se pudo cargar player_names.json")
 	
-	if not title_label or not item_list or not warning_label or not custom_name_input or not position_selector or not hire_player_button or not delete_player_button or not clear_name_button or not match_strategy or not back_button or not play_match_button or not confirm_delete_popup or not confirm_delete_button or not cancel_delete_button or not delete_popup_label:
+	if not title_label or not item_list or not warning_label or not custom_name_input or not position_selector or not hire_player_button or not delete_player_button or not clear_name_button or not match_strategy or not back_button or not play_match_button or not confirm_delete_popup or not confirm_delete_button or not cancel_delete_button or not delete_popup_label or not details_popup or not details_label:
 		show_message("Error: UI nodes not found")
 		return
 	
@@ -58,15 +59,16 @@ func _ready():
 	match_strategy.add_item("Defensiva", 1)
 	match_strategy.add_item("Equilibrada", 2)
 	position_selector.clear()
-	position_selector.add_item("Fighter", 0)
-	position_selector.add_item("Defender", 1)
-	position_selector.add_item("Thrower", 2)
-	position_selector.add_item("Runner", 3)
+	position_selector.add_item("Lineman", 0)
+	position_selector.add_item("Thrower", 1)
+	position_selector.add_item("Catcher", 2)
+	position_selector.add_item("Blitzer", 3)
+	position_selector.add_item("Ogre", 4)
+	position_selector.add_item("Halfling", 5)
 	
 	load_player_team()
 	update_team_list()
 	
-	# Connect signals programmatically
 	hire_player_button.pressed.connect(_on_hire_player_button_pressed)
 	delete_player_button.pressed.connect(_on_delete_player_button_pressed)
 	clear_name_button.pressed.connect(_on_clear_name_button_pressed)
@@ -75,8 +77,12 @@ func _ready():
 	confirm_delete_button.pressed.connect(_on_confirm_delete_button_pressed)
 	cancel_delete_button.pressed.connect(_on_cancel_delete_button_pressed)
 	item_list.item_clicked.connect(_on_item_list_item_clicked)
+	
+	if details_popup:
+		details_popup.hide()
+	else:
+		print("Error: DetailsPopup no encontrado")
 
-# Loads the player's team from user-specific JSON
 func load_player_team():
 	var file_path = "res://Resources/Teams/player_team_%s_%s.json" % [Global.current_user, Global.current_team]
 	var file = FileAccess.open(file_path, FileAccess.READ)
@@ -84,22 +90,20 @@ func load_player_team():
 		var json = JSON.parse_string(file.get_as_text())
 		team = json.get("players", [])
 		file.close()
-		# Ensure team has 24 positions
-		if team.size() != 24:
-			print("Warning: Team size is %d, resizing to 24" % team.size())
-			team.resize(24)
-			for i in range(24):
+		if team.size() != 16:
+			print("Warning: Team size is %d, resizing to 16" % team.size())
+			team.resize(16)
+			for i in range(16):
 				team[i] = team[i] if i < team.size() and team[i] != null else null
 			save_player_team()
 		print("Debug: Loaded team: ", team)
 	else:
 		print("No team file found at %s, initializing new team" % file_path)
-		team.resize(24)
-		for i in range(24):
+		team.resize(16)
+		for i in range(16):
 			team[i] = null
 		save_player_team()
 
-# Saves the player's team to user-specific JSON
 func save_player_team():
 	var dir = DirAccess.open("res://Resources/")
 	if not dir.dir_exists("Teams"):
@@ -109,10 +113,9 @@ func save_player_team():
 		file.store_string(JSON.stringify({"players": team}, "\t"))
 		file.close()
 
-# Handles hire player button press
 func _on_hire_player_button_pressed():
-	if get_player_count() >= 24:
-		show_message("¡Equipo completo! No puedes contratar más jugadores.")
+	if get_player_count() >= 16:
+		show_message("¡Equipo completo! No puedes contratar más jugadores (máximo 16).")
 		return
 	var new_player = create_player()
 	if new_player:
@@ -124,11 +127,9 @@ func _on_hire_player_button_pressed():
 			custom_name_input.text = ""
 			show_message("Jugador %s contratado." % new_player.name)
 		else:
-			show_message("Error: No hay posiciones disponibles (índice no encontrado).")
+			show_message("Error: No hay posiciones disponibles.")
 			print("Debug: Team state: ", team)
-	# Error messages are handled in create_player
 
-# Handles delete player button press
 func _on_delete_player_button_pressed():
 	delete_mode = true
 	delete_index = -1
@@ -136,25 +137,21 @@ func _on_delete_player_button_pressed():
 	item_list.deselect_all()
 	show_message("Selecciona un jugador para eliminar.")
 
-# Handles back button press
 func _on_back_button_pressed():
-	var teams_scene = load("res://Scenes/Teams.tscn").instantiate()
-	get_tree().root.add_child(teams_scene)
-	get_tree().current_scene = teams_scene
+	save_player_team()
+	var main_scene = load("res://Scenes/Main.tscn").instantiate()
+	get_tree().root.add_child(main_scene)
+	get_tree().current_scene = main_scene
 	queue_free()
 
-# Handles play match button press
 func _on_play_match_button_pressed():
 	var player_count = get_player_count()
 	if player_count < 11:
 		show_message("Necesitas al menos 11 jugadores para jugar un partido. Tienes: %d" % player_count)
 		return
-	# Mark the first 11 non-null players as playing
-	var active_count = 0
 	for i in range(team.size()):
-		if team[i] != null and active_count < 11 and team[i].state != "herido":
+		if team[i] != null and i < 11 and team[i].state != "herido":
 			team[i].state = "playing"
-			active_count += 1
 		elif team[i] != null and team[i].state != "herido":
 			team[i].state = "healthy"
 	save_player_team()
@@ -163,7 +160,6 @@ func _on_play_match_button_pressed():
 	get_tree().current_scene = match_scene
 	queue_free()
 
-# Creates a new player with position, name, and stats
 func create_player():
 	if not position_selector:
 		show_message("Error: PositionSelector no encontrado.")
@@ -190,9 +186,10 @@ func create_player():
 		var player = {
 			"name": name,
 			"position": position,
-			"number": 0,  # Assigned in update_team_list
+			"number": 0,
 			"race": "Human",
-			"stats": get_stats_for_position(position),
+			"attributes": get_attributes_for_position(position),
+			"skills": get_skills_for_position(position),
 			"state": "healthy"
 		}
 		return player
@@ -200,20 +197,29 @@ func create_player():
 		show_message("Límite de %s alcanzado (%d/%d)." % [position, get_position_count(position), position_limits[position]])
 		return null
 
-# Handles clear name button press
 func _on_clear_name_button_pressed():
 	custom_name_input.text = ""
 	show_message("Nombre limpiado.")
 
-# Handles item list click for deletion
 func _on_item_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int):
-	if mouse_button_index == MOUSE_BUTTON_LEFT and index >= 0 and index < team.size() and delete_mode and team[index] != null:
-		delete_index = index
-		delete_popup_label.text = "¿Eliminar a %s?" % team[index].name
-		confirm_delete_popup.popup_centered()
-		item_list.deselect_all()
+	if mouse_button_index == MOUSE_BUTTON_LEFT and index >= 0 and index < team.size() and team[index] != null:
+		if delete_mode:
+			delete_index = index
+			delete_popup_label.text = "¿Eliminar a %s?" % team[index].name
+			confirm_delete_popup.popup_centered()
+			item_list.deselect_all()
+		else:
+			if details_popup and details_label:
+				details_label.text = "Nombre: %s\nPosición: %s\nHabilidades: %s\nAtributos: MA %d, ST %d, AG %d+, PA %d+, AV %d+\nEstado: %s" % [
+					team[index].name, team[index].position, ", ".join(team[index].skills),
+					team[index].attributes.MA, team[index].attributes.ST, team[index].attributes.AG,
+					team[index].attributes.PA, team[index].attributes.AV,
+					"Sano" if team[index].state in ["healthy", "playing"] else "Herido"
+				]
+				details_popup.popup_centered()
+			else:
+				print("Error: DetailsPopup o DetailsLabel no encontrados")
 
-# Handles input for deselecting outside ItemList
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		var item_list_rect = item_list.get_global_rect()
@@ -225,9 +231,9 @@ func _input(event):
 				delete_player_button.text = "Eliminar Jugador"
 				confirm_delete_popup.hide()
 				show_message("Eliminación cancelada.")
-			update_team_list()
+			if details_popup:
+				details_popup.hide()
 
-# Handles confirm delete button press
 func _on_confirm_delete_button_pressed():
 	if delete_index >= 0 and delete_index < team.size() and team[delete_index] != null:
 		var player_name = team[delete_index].name
@@ -241,7 +247,6 @@ func _on_confirm_delete_button_pressed():
 	confirm_delete_popup.hide()
 	item_list.deselect_all()
 
-# Handles cancel delete button press
 func _on_cancel_delete_button_pressed():
 	delete_mode = false
 	delete_index = -1
@@ -250,13 +255,11 @@ func _on_cancel_delete_button_pressed():
 	show_message("Eliminación cancelada.")
 	item_list.deselect_all()
 
-# Displays a temporary message
 func show_message(message: String):
 	warning_label.text = message
 	await get_tree().create_timer(3.0).timeout
 	warning_label.text = ""
 
-# Returns available name combinations
 func get_available_name_combinations():
 	var combinations = []
 	for fname in first_names:
@@ -266,12 +269,10 @@ func get_available_name_combinations():
 				combinations.append(full_name)
 	return combinations
 
-# Checks if a player can be added to the given position
 func can_add_position(position):
 	var count = get_position_count(position)
-	return count < position_limits[position]
+	return count < position_limits[position] and get_player_count() < 16
 
-# Counts players in a specific position
 func get_position_count(position):
 	var count = 0
 	for player in team:
@@ -279,20 +280,6 @@ func get_position_count(position):
 			count += 1
 	return count
 
-# Returns stats for a given position
-func get_stats_for_position(position):
-	match position:
-		"Fighter":
-			return {"strength": 4, "agility": 3, "armor": 8, "movement": 6}
-		"Defender":
-			return {"strength": 3, "agility": 2, "armor": 9, "movement": 5}
-		"Thrower":
-			return {"strength": 2, "agility": 4, "armor": 7, "movement": 6}
-		"Runner":
-			return {"strength": 2, "agility": 3, "armor": 7, "movement": 7}
-	return {}
-
-# Counts non-null players
 func get_player_count():
 	var count = 0
 	for player in team:
@@ -300,22 +287,49 @@ func get_player_count():
 			count += 1
 	return count
 
-# Updates ItemList with players and empty positions
+func get_attributes_for_position(position):
+	match position:
+		"Lineman":
+			return {"MA": 6, "ST": 3, "AG": 3, "PA": 4, "AV": 8}
+		"Thrower":
+			return {"MA": 6, "ST": 3, "AG": 3, "PA": 2, "AV": 8}
+		"Catcher":
+			return {"MA": 8, "ST": 2, "AG": 2, "PA": 4, "AV": 7}
+		"Blitzer":
+			return {"MA": 7, "ST": 3, "AG": 3, "PA": 4, "AV": 8}
+		"Ogre":
+			return {"MA": 5, "ST": 5, "AG": 4, "PA": 5, "AV": 10}
+		"Halfling":
+			return {"MA": 5, "ST": 1, "AG": 3, "PA": 5, "AV": 6}
+	return {}
+
+func get_skills_for_position(position):
+	match position:
+		"Lineman":
+			return []
+		"Thrower":
+			return ["Sure Hands", "Pass"]
+		"Catcher":
+			return ["Catch", "Dodge"]
+		"Blitzer":
+			return ["Block"]
+		"Ogre":
+			return ["Bone-head", "Mighty Blow", "Thick Skull", "Throw Team-mate"]
+		"Halfling":
+			return ["Dodge", "Right Stuff", "Stunty"]
+	return []
+
 func update_team_list():
 	item_list.clear()
 	for i in range(team.size()):
 		if team[i] != null:
 			team[i].number = i + 1
-			var text = "#%d - %s - %s - %s - %s (F: %d, A: %d, Arm: %d, M: %d)" % [
-				i + 1, team[i].name, team[i].position, team[i].race, team[i].state.capitalize(),
-				team[i].stats.strength, team[i].stats.agility,
-				team[i].stats.armor, team[i].stats.movement
-			]
+			var text = "#%d - %s - %s" % [i + 1, team[i].name, team[i].position]
 			item_list.add_item(text, null, true)
 			if team[i].state == "herido":
 				item_list.set_item_custom_fg_color(i, Color.RED)
 			else:
-				item_list.set_item_custom_fg_color(i, Color.WHITE)
+				item_list.set_item_custom_fg_color(i, Color.WHITE)  # "healthy" o "playing" son blanco
 		else:
 			item_list.add_item("Vacío #%d" % [i + 1], null, true)
 	item_list.deselect_all()

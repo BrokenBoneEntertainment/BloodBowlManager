@@ -5,8 +5,10 @@
 [node name="Login" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 60.0
+offset_top = 76.0
+offset_right = 100.0
+offset_bottom = 116.0
 script = ExtResource("1_leum0")
 
 [node name="UIContainer" type="VBoxContainer" parent="."]
