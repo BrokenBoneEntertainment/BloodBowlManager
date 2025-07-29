@@ -66,6 +66,7 @@ func _ready():
 	position_selector.add_item("Ogre", 4)
 	position_selector.add_item("Halfling", 5)
 	
+	team.resize(16)  # Inicializar con 16 slots
 	load_player_team()
 	update_team_list()
 	
@@ -84,31 +85,33 @@ func _ready():
 		print("Error: DetailsPopup no encontrado")
 
 func load_player_team():
-	var file_path = "res://Resources/Teams/player_team_%s_%s.json" % [Global.current_user, Global.current_team]
+	var sanitized_team_name = Global.sanitize_filename(Global.current_team)
+	var file_path = "res://Resources/Teams/player_team_%s_%s.json" % [Global.current_user, sanitized_team_name]
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	if file:
 		var json = JSON.parse_string(file.get_as_text())
-		team = json.get("players", [])
+		if json is Dictionary and json.has("players"):
+			team = json.players
+			if team.size() != 16:
+				print("Warning: Team size is %d, resizing to 16" % team.size())
+				var temp_team = []
+				temp_team.resize(16)
+				for i in min(16, team.size()):
+					temp_team[i] = team[i] if team[i] != null else null
+				team = temp_team
+			print("Debug: Loaded team: ", team)
 		file.close()
-		if team.size() != 16:
-			print("Warning: Team size is %d, resizing to 16" % team.size())
-			team.resize(16)
-			for i in range(16):
-				team[i] = team[i] if i < team.size() and team[i] != null else null
-			save_player_team()
-		print("Debug: Loaded team: ", team)
 	else:
-		print("No team file found at %s, initializing new team" % file_path)
-		team.resize(16)
-		for i in range(16):
-			team[i] = null
-		save_player_team()
+		show_message("Error: El archivo del equipo no existe. Crea el equipo en la escena Teams.")
+		# No inicializar aquí, dejar que Teams lo maneje
 
 func save_player_team():
+	var sanitized_team_name = Global.sanitize_filename(Global.current_team)
+	var file_path = "res://Resources/Teams/player_team_%s_%s.json" % [Global.current_user, sanitized_team_name]
 	var dir = DirAccess.open("res://Resources/")
 	if not dir.dir_exists("Teams"):
 		dir.make_dir("Teams")
-	var file = FileAccess.open("res://Resources/Teams/player_team_%s_%s.json" % [Global.current_user, Global.current_team], FileAccess.WRITE)
+	var file = FileAccess.open(file_path, FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify({"players": team}, "\t"))
 		file.close()
@@ -149,11 +152,6 @@ func _on_play_match_button_pressed():
 	if player_count < 11:
 		show_message("Necesitas al menos 11 jugadores para jugar un partido. Tienes: %d" % player_count)
 		return
-	for i in range(team.size()):
-		if team[i] != null and i < 11 and team[i].state != "herido":
-			team[i].state = "playing"
-		elif team[i] != null and team[i].state != "herido":
-			team[i].state = "healthy"
 	save_player_team()
 	var match_scene = load("res://Scenes/Match.tscn").instantiate()
 	get_tree().root.add_child(match_scene)
@@ -190,7 +188,7 @@ func create_player():
 			"race": "Human",
 			"attributes": get_attributes_for_position(position),
 			"skills": get_skills_for_position(position),
-			"state": "healthy"
+			"state": "healthy"  # Solo "healthy" o "herido"
 		}
 		return player
 	else:
@@ -214,7 +212,7 @@ func _on_item_list_item_clicked(index: int, at_position: Vector2, mouse_button_i
 					team[index].name, team[index].position, ", ".join(team[index].skills),
 					team[index].attributes.MA, team[index].attributes.ST, team[index].attributes.AG,
 					team[index].attributes.PA, team[index].attributes.AV,
-					"Sano" if team[index].state in ["healthy", "playing"] else "Herido"
+					"Sano" if team[index].state == "healthy" else "Herido"
 				]
 				details_popup.popup_centered()
 			else:
@@ -328,8 +326,8 @@ func update_team_list():
 			item_list.add_item(text, null, true)
 			if team[i].state == "herido":
 				item_list.set_item_custom_fg_color(i, Color.RED)
-			else:
-				item_list.set_item_custom_fg_color(i, Color.WHITE)  # "healthy" o "playing" son blanco
+			else:  # "healthy"
+				item_list.set_item_custom_fg_color(i, Color.WHITE)
 		else:
 			item_list.add_item("Vacío #%d" % [i + 1], null, true)
 	item_list.deselect_all()

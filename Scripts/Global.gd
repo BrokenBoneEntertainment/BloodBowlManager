@@ -1,10 +1,16 @@
 extends Node
 
-# Stores the current authenticated user
-var current_user: String = ""
+var current_user = ""
+var current_team = ""
 
-# Maximum number of teams per user
-const MAX_TEAMS: int = 2
+const MAX_TEAMS = 5  # Definir un valor por defecto
 
-# Stores the current selected team name
-var current_team: String = ""
+static func sanitize_filename(input: String) -> String:
+	if not input:
+		return "default"
+	var invalid_chars = ["%", "/", "\\", ":", "*", "?", "\"", "<", ">", "|"]
+	var sanitized = input
+	for char in invalid_chars:
+		sanitized = sanitized.replace(char, "_")
+	sanitized = sanitized.strip_edges().replace(" ", "_")
+	return sanitized if sanitized else "default"

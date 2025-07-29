@@ -20,7 +20,7 @@ var teams = []
 func _ready():
 	if not Global.current_user:
 		Global.current_user = "default_user"
-	Global.current_user = sanitize_filename(Global.current_user)
+	Global.current_user = Global.sanitize_filename(Global.current_user)
 	title_label.text = "Tus Equipos"
 	create_team_button.text = "Crear Equipo"
 	back_button.text = "Volver"
@@ -40,16 +40,6 @@ func _ready():
 	confirm_delete_team_button.pressed.connect(_on_confirm_delete_team_button_pressed)
 	cancel_delete_team_button.pressed.connect(_on_cancel_delete_team_button_pressed)
 
-func sanitize_filename(input: String) -> String:
-	if not input:
-		return "default"
-	var invalid_chars = ["%", "/", "\\", ":", "*", "?", "\"", "<", ">", "|"]
-	var sanitized = input
-	for char in invalid_chars:
-		sanitized = sanitized.replace(char, "_")
-	sanitized = sanitized.strip_edges().replace(" ", "_")
-	return sanitized if sanitized else "default"
-
 func load_teams():
 	var file_path = "res://Resources/Teams/teams_%s.json" % Global.current_user
 	var dir = DirAccess.open("res://Resources/Teams/")
@@ -64,6 +54,17 @@ func load_teams():
 	else:
 		teams = []
 		save_teams()
+	# Validar existencia de archivos de equipo
+	var valid_teams = []
+	for team in teams.duplicate():
+		var team_file = team.file
+		var full_path = "res://Resources/Teams/%s" % team_file
+		if not dir.file_exists(full_path):
+			print("Archivo no encontrado para equipo %s, eliminando de la lista." % team.name)
+		else:
+			valid_teams.append(team)
+	teams = valid_teams
+	save_teams()
 
 func save_teams():
 	var dir = DirAccess.open("res://Resources/")
@@ -113,19 +114,23 @@ func _on_confirm_create_button_pressed():
 	if teams.any(func(t): return t.name == team_name):
 		show_popup_message("El nombre del equipo ya existe.")
 		return
-	var sanitized_team_name = sanitize_filename(team_name)
+	var sanitized_team_name = Global.sanitize_filename(team_name)
 	var team_file = "player_team_%s_%s.json" % [Global.current_user, sanitized_team_name]
-	teams.append({"name": team_name, "file": team_file})
-	save_teams()
+	# Crear archivo inicial con 16 nulls
 	var file_path = "res://Resources/Teams/%s" % team_file
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
 	if file:
 		var initial_team = []
-		initial_team.resize(24)
-		for i in range(24):
+		initial_team.resize(16)  # Usar 16 slots en lugar de 24 para consistencia con TeamManagement
+		for i in range(16):
 			initial_team[i] = null
 		file.store_string(JSON.stringify({"players": initial_team}, "\t"))
 		file.close()
+	else:
+		show_popup_message("Error al crear el archivo del equipo.")
+		return
+	teams.append({"name": team_name, "file": team_file})
+	save_teams()
 	show_popup_message("Equipo %s creado." % team_name)
 	await get_tree().create_timer(2.0).timeout
 	create_team_popup.hide()
@@ -155,15 +160,23 @@ func _on_confirm_delete_team_button_pressed():
 	if team_index >= 0 and team_index < teams.size():
 		var team_name = teams[team_index].name
 		var team_file = teams[team_index].file
+		var full_path = "res://Resources/Teams/%s" % team_file
 		var dir = DirAccess.open("res://Resources/Teams/")
 		if dir:
-			var full_path = "res://Resources/Teams/%s" % team_file
-			if dir.file_exists(team_file):
-				dir.remove(team_file)
-		teams.remove_at(team_index)
-		save_teams()
-		update_team_list()
-		show_popup_message("Equipo %s eliminado." % [team_name])
+			# Buscar y eliminar cualquier archivo con el mismo nombre base
+			var files = dir.get_files()
+			for file in files:
+				if file.begins_with("player_team_%s_%s" % [Global.current_user, Global.sanitize_filename(team_name)]):
+					var file_path = "res://Resources/Teams/%s" % file
+					var error = dir.remove(file_path)
+					if error == OK:
+						print("Archivo %s eliminado correctamente." % file_path)
+					else:
+						print("Error al eliminar el archivo %s: %s" % [file_path, error_string(error)])
+			teams.remove_at(team_index)
+			save_teams()
+			update_team_list()
+			show_popup_message("Equipo %s eliminado." % [team_name])
 	confirm_delete_team_popup.hide()
 	confirm_delete_team_popup.remove_meta("team_index")
 
