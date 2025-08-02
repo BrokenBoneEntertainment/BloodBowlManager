@@ -1,0 +1,15 @@
+{
+  "first_names": [
+	"Grok", "Hrothgar", "Eldric", "Jorvik", "Thane", "Alaric", "Baldric", "Cedric", "Darius", "Eadric",
+	"Ferdinand", "Gareth", "Hadrian", "Isolde", "Jasper", "Kieran", "Lancelot", "Magnus", "Nero", "Oswin",
+	"Percival", "Quentin", "Ragnar", "Siegfried", "Theobald", "Ulric", "Vincent", "Waldemar", "Xavier", "Yorick",
+	"Zephyr", "Aethelred", "Branwen", "Conrad", "Draven", "Edmund", "Frederic", "Gideon", "Harold", "Ivor"
+  ],
+  "titles": [
+	"el Fuerte", "el Muro", "el Preciso", "el Sabio", "el Valiente", "el Justo", "el Leal", "el Ágil", "el Bravo",
+	"el Astuto", "el Noble", "el Intrépido", "el Guardián", "el Eterno", "el Veloz", "el Feroz", "el Sabio",
+	"el Implacable", "el Luminoso", "el Silencioso", "el Poderoso", "el Audaz", "el Resistente", "el Sagaz",
+	"el Lejano", "el Inmortal", "el Ardiente", "el Sereno", "el Rápido", "el Fiel", "el Salvaje", "el Ingenioso",
+	"el Sólido", "el Temido", "el Honrado", "el Cauto", "el Brillante", "el Sutil", "el Galante", "el Recto"
+  ]
+}

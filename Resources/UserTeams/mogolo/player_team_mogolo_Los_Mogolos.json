@@ -1,0 +1,246 @@
+{
+	"gold": 200000,
+	"players": [
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Branwen el Fiel",
+			"number": 1,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Isolde el Leal",
+			"number": 2,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Eadric el Sereno",
+			"number": 3,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Yorick el Recto",
+			"number": 4,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Xavier el Audaz",
+			"number": 5,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Zephyr el Sutil",
+			"number": 6,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Edmund el Brillante",
+			"number": 7,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Kieran el Silencioso",
+			"number": 8,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Branwen el Veloz",
+			"number": 9,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Grok el Rápido",
+			"number": 10,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Aethelred el Astuto",
+			"number": 11,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Ferdinand el Audaz",
+			"number": 12,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Theobald el Eterno",
+			"number": 13,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Ragnar el Justo",
+			"number": 14,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Grok el Implacable",
+			"number": 15,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		},
+		{
+			"attributes": {
+				"AG": 3.0,
+				"AV": 8.0,
+				"MA": 6.0,
+				"PA": 4.0,
+				"ST": 3.0
+			},
+			"name": "Jorvik el Astuto",
+			"number": 16,
+			"position": "Lineman",
+			"race": "human",
+			"skills": [],
+			"state": "healthy"
+		}
+	],
+	"template": "human"
+}

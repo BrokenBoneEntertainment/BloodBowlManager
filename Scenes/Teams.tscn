@@ -46,6 +46,9 @@ offset_bottom = 132.0
 layout_mode = 2
 placeholder_text = "Nombre del equipo"
 
+[node name="TemplateSelector" type="OptionButton" parent="UIContainer/CreateTeamPopup/PopupContent"]
+layout_mode = 2
+
 [node name="ConfirmCreateButton" type="Button" parent="UIContainer/CreateTeamPopup/PopupContent"]
 layout_mode = 2
 text = "Confirmar"

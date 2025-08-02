@@ -20,6 +20,9 @@ offset_bottom = 653.0
 layout_mode = 2
 text = "Equipo: [Global.current_team]"
 
+[node name="GoldLabel" type="Label" parent="UIContainer"]
+layout_mode = 2
+
 [node name="ItemList" type="ItemList" parent="UIContainer"]
 custom_minimum_size = Vector2(600, 300)
 layout_mode = 2

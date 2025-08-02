@@ -1,0 +1,12 @@
+{
+  "name": "Human",
+  "active": true,
+  "medic_cost": 50000,
+  "reroll_cost": 70000,
+  "positions": [
+	{"name": "Lineman", "count": 16, "skills": [], "attributes": {"MA": 6, "ST": 3, "AG": 3, "PA": 4, "AV": 8}, "cost": 50000},
+	{"name": "Thrower", "count": 2, "skills": ["Sure Hands", "Pass"], "attributes": {"MA": 6, "ST": 3, "AG": 3, "PA": 2, "AV": 8}, "cost": 70000},
+	{"name": "Catcher", "count": 4, "skills": ["Catch", "Dodge"], "attributes": {"MA": 8, "ST": 2, "AG": 2, "PA": 4, "AV": 7}, "cost": 60000},
+	{"name": "Blitzer", "count": 4, "skills": ["Block"], "attributes": {"MA": 7, "ST": 3, "AG": 3, "PA": 4, "AV": 8}, "cost": 80000}
+  ]
+}

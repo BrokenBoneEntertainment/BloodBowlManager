@@ -1,0 +1,11 @@
+{
+  "name": "Orc",
+  "active": true,
+  "medic_cost": 50000,
+  "reroll_cost": 60000,
+  "positions": [
+	{"name": "Lineman", "count": 16, "skills": [], "attributes": {"MA": 5, "ST": 3, "AG": 3, "PA": 4, "AV": 9}, "cost": 40000},
+	{"name": "Black Orc", "count": 4, "skills": ["Block"], "attributes": {"MA": 4, "ST": 4, "AG": 2, "PA": 5, "AV": 9}, "cost": 80000},
+	{"name": "Goblin", "count": 2, "skills": ["Dodge", "Stunty"], "attributes": {"MA": 6, "ST": 2, "AG": 3, "PA": 4, "AV": 7}, "cost": 30000}
+  ]
+}
